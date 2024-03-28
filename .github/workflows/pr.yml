@@ -11,10 +11,7 @@ jobs:
       - uses: ljharb/actions/node/install@main
         name: 'nvm install lts/* && npm install'
         with:
-          skip-install: true
-          skip-ls-check: true
           node-version: lts/*
-      - run: npm install --legacy-peer-deps
       - run: npm run build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
