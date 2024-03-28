@@ -1558,7 +1558,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let sdoMap = JSON.parse(`{}`);
-let biblio = JSON.parse(`{"refsByClause":{},"entries":[{"type":"clause","id":"intro","titleHTML":"Introduction","number":""},{"type":"clause","id":"sec-copyright-and-software-license","title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A"}]}`);
+let biblio = JSON.parse(`{"refsByClause":{"sec-createdisposableresource":["_ref_0"]},"entries":[{"type":"clause","id":"intro","titleHTML":"Introduction","number":""},{"type":"table","id":"table-1","number":1,"caption":"Table 1: Well-known Symbols"},{"type":"clause","id":"sec-well-known-symbols","titleHTML":"Well-Known Symbols","number":"1.1.1.1"},{"type":"clause","id":"sec-ecmascript-language-types-symbol-type","titleHTML":"The Symbol Type","number":"1.1.1"},{"type":"clause","id":"sec-ecmascript-language-types","titleHTML":"ECMAScript Language Types","number":"1.1","referencingIds":["_ref_0"]},{"type":"op","aoid":"Type","refId":"sec-ecmascript-data-types-and-values"},{"type":"clause","id":"sec-ecmascript-data-types-and-values","titleHTML":"ECMAScript Data Types and Values","number":"1"},{"type":"op","aoid":"CreateDisposableResource","refId":"sec-createdisposableresource"},{"type":"clause","id":"sec-createdisposableresource","title":"CreateDisposableResource ( V, hint [ , method ] )","titleHTML":"CreateDisposableResource ( <var>V</var>, <var>hint</var> [ , <var>method</var> ] )","number":"2.1.1"},{"type":"clause","id":"sec-operations-on-disposable-objects","titleHTML":"Operations on Disposable Objects","number":"2.1"},{"type":"clause","id":"sec-abstract-operations","titleHTML":"Abstract Operations","number":"2"},{"type":"clause","id":"sec-copyright-and-software-license","title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A"}]}`);
 ;let usesMultipage = false</script><style>/* IBM Plex fonts (Latin subset) have been downloaded from Google Fonts and modified to add support back in for the `zero` substitution (slashed zeroes) */
 
 /* https://fonts.googleapis.com/css2?family=IBM%20Plex%20Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap */
@@ -3220,7 +3220,7 @@ emu-intro {
 </ul></div><div id="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; stroke:currentColor" viewBox="0 0 120 120" width="54" height="54">
       <title>Menu</title>
       <path stroke-width="10" stroke-linecap="round" d="M30,60 h60  M30,30 m0,5 h60  M30,90 m0,-5 h60"></path>
-    </svg></div><div id="menu-spacer" class="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins<button class="unpin-all">clear</button></div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#intro" title="Introduction">Introduction</a></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage -1 Draft / March 28, 2024</h1><h1 class="title">Strict Enforcement of 'using'</h1>
+    </svg></div><div id="menu-spacer" class="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins<button class="unpin-all">clear</button></div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#intro" title="Introduction">Introduction</a></li><li><span class="item-toggle">+</span><a href="#sec-ecmascript-data-types-and-values" title="ECMAScript Data Types and Values"><span class="secnum">1</span> ECMAScript Data Types and Values</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-ecmascript-language-types" title="ECMAScript Language Types"><span class="secnum">1.1</span> ECMAScript Language Types</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-ecmascript-language-types-symbol-type" title="The Symbol Type"><span class="secnum">1.1.1</span> The Symbol Type</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-well-known-symbols" title="Well-Known Symbols"><span class="secnum">1.1.1.1</span> Well-Known Symbols</a></li></ol></li></ol></li></ol></li><li><span class="item-toggle">+</span><a href="#sec-abstract-operations" title="Abstract Operations"><span class="secnum">2</span> Abstract Operations</a><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-operations-on-disposable-objects" title="Operations on Disposable Objects"><span class="secnum">2.1</span> Operations on Disposable Objects</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-createdisposableresource" title="CreateDisposableResource ( V, hint [ , method ] )"><span class="secnum">2.1.1</span> CreateDisposableResource ( <var>V</var>, <var>hint</var> [ , <var>method</var> ] )</a></li></ol></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage -1 Draft / March 28, 2024</h1><h1 class="title">Strict Enforcement of 'using'</h1>
 
 <emu-biblio href="node_modules/@tc39/ecma262-biblio/biblio.json"></emu-biblio>
 
@@ -3228,7 +3228,61 @@ emu-intro {
   <h1>Introduction</h1>
   <p>See <a href="https://github.com/rbuckton/proposal-strict-using-enforcement" data-print-href="">the proposal repository</a> for background material and discussion.</p>
 </emu-intro>
-<emu-annex id="sec-copyright-and-software-license">
+
+<emu-clause id="sec-ecmascript-data-types-and-values" aoid="Type">
+  <h1><span class="secnum">1</span> ECMAScript Data Types and Values</h1>
+  <emu-clause id="sec-ecmascript-language-types">
+    <h1><span class="secnum">1.1</span> ECMAScript Language Types</h1>
+    <emu-clause id="sec-ecmascript-language-types-symbol-type">
+      <h1><span class="secnum">1.1.1</span> The Symbol Type</h1>
+      <emu-clause id="sec-well-known-symbols">
+        <h1><span class="secnum">1.1.1.1</span> Well-Known Symbols</h1>
+        <emu-table id="table-1" caption="Well-known Symbols"><figure><figcaption>Table 1: Well-known Symbols</figcaption>
+          <table>
+            <tbody>
+            <tr>
+              <th>
+                Specification Name
+              </th>
+              <th>
+                <var class="field">[[Description]]</var>
+              </th>
+              <th>
+                Value and Purpose
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <ins>@@enter</ins>
+              </td>
+              <td>
+                <ins><code>"Symbol.enter"</code></ins>
+              </td>
+              <td>
+                <ins>A method that returns a Disposable Object to ensure strict enforcement of <code>using</code>, <code>await using</code>, <code>DisposableStack.prototype.use</code>, or <code>AsyncDisposableStack.prototype.use</code>.</ins>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </figure></emu-table>
+      </emu-clause>
+    </emu-clause>
+  </emu-clause>
+</emu-clause>
+
+<emu-clause id="sec-abstract-operations">
+  <h1><span class="secnum">2</span> Abstract Operations</h1>
+
+  <emu-clause id="sec-operations-on-disposable-objects">
+    <h1><span class="secnum">2.1</span> Operations on Disposable Objects</h1>
+
+    <emu-clause id="sec-createdisposableresource" type="abstract operation" aoid="CreateDisposableResource">
+      <h1><span class="secnum">2.1.1</span> CreateDisposableResource ( <var>V</var>, <var>hint</var> [ , <var>method</var> ] )</h1>
+      <p>The abstract operation CreateDisposableResource takes arguments <var>V</var> (an <emu-xref href="#sec-ecmascript-language-types" id="_ref_0"><a href="#sec-ecmascript-language-types">ECMAScript language value</a></emu-xref>) and <var>hint</var> (either <emu-const>sync-dispose</emu-const> or <emu-const>async-dispose</emu-const>) and optional argument <var>method</var> (a <emu-xref href="#function-object"><a href="https://tc39.es/ecma262/#function-object">function object</a></emu-xref>) and returns either a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">normal completion containing</a></emu-xref> a DisposableResource <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref> or a <emu-xref href="#sec-completion-record-specification-type"><a href="https://tc39.es/ecma262/#sec-completion-record-specification-type">throw completion</a></emu-xref>. It performs the following steps when called:</p>
+      <emu-alg><ol><li>If <var>method</var> is not present, then<ol><li>If <var>V</var> is either <emu-val>null</emu-val> or <emu-val>undefined</emu-val>, then<ol><li>Set <var>V</var> to <emu-val>undefined</emu-val>.</li><li>Set <var>method</var> to <emu-val>undefined</emu-val>.</li></ol></li><li>Else,<ol><li>If <var>V</var> <emu-xref href="#sec-object-type"><a href="https://tc39.es/ecma262/#sec-object-type">is not an Object</a></emu-xref>, throw a <emu-val>TypeError</emu-val> exception.</li><li><ins>Let <var>enter</var> be ?&nbsp;<emu-xref aoid="GetMethod"><a href="https://tc39.es/ecma262/#sec-getmethod">GetMethod</a></emu-xref>(<var>V</var>, @@enter).</ins></li><li><ins>If <var>enter</var> is not <emu-val>undefined</emu-val>, then</ins><ol><li><ins>Set <var>V</var> to ?&nbsp;<emu-xref aoid="Call"><a href="https://tc39.es/ecma262/#sec-call">Call</a></emu-xref>(<var>enter</var>, <var>V</var>).</ins></li><li><ins>If <var>V</var> <emu-xref href="#sec-object-type"><a href="https://tc39.es/ecma262/#sec-object-type">is not an Object</a></emu-xref>, throw a <emu-val>TypeError</emu-val> exception.</ins></li></ol></li><li>Set <var>method</var> to ?&nbsp;GetDisposeMethod(<var>V</var>, <var>hint</var>).</li><li>If <var>method</var> is <emu-val>undefined</emu-val>, throw a <emu-val>TypeError</emu-val> exception.</li></ol></li></ol></li><li>Else,<ol><li>If <emu-xref aoid="IsCallable"><a href="https://tc39.es/ecma262/#sec-iscallable">IsCallable</a></emu-xref>(<var>method</var>) is <emu-val>false</emu-val>, throw a <emu-val>TypeError</emu-val> exception.</li></ol></li><li>Return the DisposableResource <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.es/ecma262/#sec-list-and-record-specification-type">Record</a></emu-xref> { <var class="field">[[ResourceValue]]</var>: <var>V</var>, <var class="field">[[Hint]]</var>: <var>hint</var>, <var class="field">[[DisposeMethod]]</var>: <var>method</var>&nbsp;}.</li></ol></emu-alg>
+    </emu-clause>
+  </emu-clause>
+</emu-clause><emu-annex id="sec-copyright-and-software-license">
       <h1><span class="secnum">A</span> Copyright &amp; Software License</h1>
       
       <h2>Copyright Notice</h2>
@@ -3247,4 +3301,5 @@ emu-intro {
 
 <p>THIS SOFTWARE IS PROVIDED BY THE ECMA INTERNATIONAL "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL ECMA INTERNATIONAL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
-    </emu-annex></div></body>
+    </emu-annex>
+</div></body>
