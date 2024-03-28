@@ -1,9 +1,9 @@
 {
-  "name": "proposal-symbol-enter",
+  "name": "proposal-using-enforcement",
   "version": "0.0.0",
   "private": true,
   "description": "ECMAScript Symbol.enter for opt-in strict enforcement of 'using'",
-  "homepage": "https://github.com/tc39/proposal-symbol-enter#readme",
+  "homepage": "https://github.com/tc39/proposal-using-enforcement#readme",
   "author": {
     "name": "Ron Buckton",
     "email": "ron.buckton@microsoft.com"
@@ -26,5 +26,5 @@
     "gulp-live-server": "0.0.31",
     "gulp-rename": "^2.0.0"
   },
-  "repository": "tc39/proposal-symbol-enter"
+  "repository": "tc39/proposal-using-enforcement"
 }
