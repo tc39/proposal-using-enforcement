@@ -1,4 +1,4 @@
-# `Symbol.enter`
+# Strict Enforcement of `using`
 
 A proposal to extend Explicit Resource Management to add an opt-in strict `using` usage requirement for resources via
 `Symbol.enter`.
