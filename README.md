@@ -197,6 +197,13 @@ whether the resource has already been disposed. Since `[Symbol.dispose]` is a ge
 state change from `"unregistered"` to `"registered"` and returns the actual dispose method that will be invoked by
 `using` at the end of the containing block.
 
+# What is Not Being Proposed
+
+We are explicitly not proposing a feature with the breadth of Python's [Context Managers](https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers).
+Context managers allow you to intercept, replace, and even drop exceptions thrown within the context which is a far more
+complex mechanism than what is proposed. For further discussion on full exception handling, please refer to
+[tc39/proposal-explicit-resource-management#49](https://github.com/tc39/proposal-explicit-resource-management/issues/49).
+
 # Prior Art
 
 - Python [Context Managers](https://docs.python.org/3/reference/datamodel.html#with-statement-context-managers) and
