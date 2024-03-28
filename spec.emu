@@ -15,3 +15,80 @@ contributors: Ron Buckton, Ecma International
   <h1>Introduction</h1>
   <p>See <a href="https://github.com/rbuckton/proposal-strict-using-enforcement">the proposal repository</a> for background material and discussion.</p>
 </emu-intro>
+
+<emu-clause id="sec-ecmascript-data-types-and-values" aoid="Type">
+  <h1>ECMAScript Data Types and Values</h1>
+  <emu-clause id="sec-ecmascript-language-types">
+    <h1>ECMAScript Language Types</h1>
+    <emu-clause id="sec-ecmascript-language-types-symbol-type">
+      <h1>The Symbol Type</h1>
+      <emu-clause id="sec-well-known-symbols">
+        <h1>Well-Known Symbols</h1>
+        <emu-table id="table-1" caption="Well-known Symbols">
+          <table>
+            <tbody>
+            <tr>
+              <th>
+                Specification Name
+              </th>
+              <th>
+                [[Description]]
+              </th>
+              <th>
+                Value and Purpose
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <ins>@@enter</ins>
+              </td>
+              <td>
+                <ins>`"Symbol.enter"`</ins>
+              </td>
+              <td>
+                <ins>A method that returns a Disposable Object to ensure strict enforcement of `using`, `await using`, `DisposableStack.prototype.use`, or `AsyncDisposableStack.prototype.use`.</ins>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </emu-table>
+      </emu-clause>
+    </emu-clause>
+  </emu-clause>
+</emu-clause>
+
+<emu-clause id="sec-abstract-operations">
+  <h1>Abstract Operations</h1>
+
+  <emu-clause id="sec-operations-on-disposable-objects">
+    <h1>Operations on Disposable Objects</h1>
+
+    <emu-clause id="sec-createdisposableresource" type="abstract operation">
+      <h1>
+        CreateDisposableResource (
+          _V_ : an ECMAScript language value,
+          _hint_ : either ~sync-dispose~ or ~async-dispose~,
+          optional _method_ : a function object,
+        ): either a normal completion containing a DisposableResource Record or a throw completion
+      </h1>
+      <dl class="header"></dl>
+      <emu-alg>
+        1. If _method_ is not present, then
+          1. If _V_ is either *null* or *undefined*, then
+            1. Set _V_ to *undefined*.
+            1. Set _method_ to *undefined*.
+          1. Else,
+            1. If _V_ is not an Object, throw a *TypeError* exception.
+            1. <ins>Let _enter_ be ? GetMethod(_V_, @@enter).</ins>
+            1. <ins>If _enter_ is not *undefined*, then</ins>
+                1. <ins>Set _V_ to ? Call(_enter_, _V_).</ins>
+                1. <ins>If _V_ is not an Object, throw a *TypeError* exception.</ins>
+            1. Set _method_ to ? GetDisposeMethod(_V_, _hint_).
+            1. If _method_ is *undefined*, throw a *TypeError* exception.
+        1. Else,
+          1. If IsCallable(_method_) is *false*, throw a *TypeError* exception.
+        1. Return the DisposableResource Record { [[ResourceValue]]: _V_, [[Hint]]: _hint_, [[DisposeMethod]]: _method_ }.
+      </emu-alg>
+    </emu-clause>
+  </emu-clause>
+</emu-clause>
